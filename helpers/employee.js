@@ -12,13 +12,18 @@ const db = mysql.createConnection(
 );
 
 
-viewEmployee = () => {
-
+function viewEmployee () {
+    db.query(`SELECT * FROM employee;`, function (err, results) {
+        if (err) {
+            console.error(err);
+        }
+        console.table(results);
+    });
 }
 
 function addEmployee () {
     return inquirer
-        .prompt(
+        .prompt([
         {
             type: 'input',
             name: 'first_name',
@@ -29,11 +34,11 @@ function addEmployee () {
             name: 'last_name',
             message: 'Last Name:',
         }
-    ).then((data) => {
-        db.query(`INSERT INTO employee (name) VALUES ("");`, data.addEmployee, function (err) {
+    ]).then((data) => {
+        db.query(`INSERT INTO employee (first_name, last_name) VALUES ("", "");`, data.addEmployee, function (err) {
             if (err) {
                 console.error(err);
-            }
+            } else
             console.log('Success');
         });
     });

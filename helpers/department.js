@@ -11,8 +11,13 @@ const db = mysql.createConnection(
     },
 );
 
-viewDepartment = () => {
-
+function viewDepartment () {
+    db.query(`SELECT * FROM department;`, function (err, results) {
+        if (err) {
+            console.error(err);
+        }
+        console.table(results);
+    });
 }
 
 // Shout out to Freddy Kwak who is in my study group and helped me understand this
@@ -29,7 +34,7 @@ function addDepartment () {
         db.query(`INSERT INTO department (name) VALUES ("");`, data.addDepartment, function (err) {
             if (err) {
                 console.error(err);
-            }
+            } else
             console.log('Success');
         });
     }); 

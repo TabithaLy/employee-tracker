@@ -22,7 +22,8 @@ CREATE TABLE role (
 -- Shout out to Freddy Kwak who is in my study group and help me understand this.
 CREATE TABLE manager (
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY
-)
+  name VARCHAR(100),
+);
 
 -- Shout out to Voravich who is in my study group and whose repo 
 -- helped me understand this

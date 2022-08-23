@@ -11,13 +11,18 @@ const db = mysql.createConnection(
     },
 );
 
-viewRole = () => {
-
+function viewRole () {
+    db.query(`SELECT * FROM role;`, function (err, results) {
+        if (err) {
+            console.error(err);
+        }
+        console.table(results);
+    });
 }
 
 function addRole () {
     return inquirer
-    .prompt(
+    .prompt([
         {
             type: 'input',
             name: 'title',
@@ -28,11 +33,11 @@ function addRole () {
             name: 'salary',
             message: 'Salary:',
         }
-    ).then((data) => {
-        db.query(`INSERT INTO role (name) VALUES ("");`, data.addRole, function (err) {
+    ]).then((data) => {
+        db.query(`INSERT INTO role (title, salary) VALUES ("", ?);`, data.addRole, function (err) {
             if (err) {
                 console.error(err);
-            }
+            } else
             console.log('Success');
         });
     });

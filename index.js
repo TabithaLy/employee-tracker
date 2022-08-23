@@ -24,18 +24,18 @@ function menu () {
         .then(response => {
             // addDepartment();
             switch (response.menu) {
-            //     case 'view all departments':
-            //         // viewDepartment();
-            //         // menu();
-            //         break;
-            //     case 'view all roles':
-            //         // viewRole();
-            //         // menu();
-            //         break;
-            //     case 'view all employees':
-            //         // viewEmployee();
-            //         menu();
-            //         break;
+                case 'view all departments':
+                    viewDepartment();
+                    // menu();
+                    break;
+                case 'view all roles':
+                    viewRole();
+                    // menu();
+                    break;
+                case 'view all employees':
+                    viewEmployee();
+                    // menu();
+                    break;
                 case 'add a department':
                     addDepartment();
                     // menu();
@@ -48,10 +48,10 @@ function menu () {
                     addEmployee();
                     // menu();
                     break;
-            //     case 'update':
-            //         menu();
-            //         break;
-            }
+                // case 'update':
+                //     menu();
+                //     break;
+            };
         });
 }   
 
