@@ -13,9 +13,9 @@ VALUES ("Ninja",100000,1),
        ("Delver",300000,3),
        ("Hollow",300000,3);
 
-INSERT INTO employee (first_name, last_name, role_id, manager_id)
-VALUES ("Naruto","Uzumaki",1, null),
-       ("Itachi","Uchiha",2,1),
-       ("Gon","Freecss",3,null),
-       ("Riko","Cave",4,5),
-       ("Nanachi","Narehate",5,4);
+INSERT INTO employee (first_name, last_name, role_id)
+VALUES ("Naruto","Uzumaki",1),
+       ("Itachi","Uchiha",2),
+       ("Gon","Freecss",3),
+       ("Riko","Cave",4),
+       ("Nanachi","Narehate",5);
