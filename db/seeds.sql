@@ -6,7 +6,7 @@ VALUES ("Naruto"),
 
 INSERT INTO role (title, salary, department_id)
 VALUES ("Ninja",100000,1),
-       ("Akatsuki",100000, 1),
+       ("Akatsuki",100000,1),
        ("Hunter",200000,2),
        ("Delver",300000,3),
        ("Hollow",300000,3);

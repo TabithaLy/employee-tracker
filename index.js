@@ -1,5 +1,4 @@
 const inquirer = require('inquirer');
-const mysql = require('mysql2');
 
 // Menu prompt - copied syntax from my own previous challenge team profile 
 // generator: https://github.com/TabithaLy/team-profile-generator/index.js
@@ -23,21 +22,27 @@ function menu () {
         .then(response => {
             switch (response.menu) {
                 case 'view all departments':
+                    viewDepartment();
                     menu();
                     break;
                 case 'view all roles':
+                    viewRole();
                     menu();
                     break;
                 case 'view all employees':
+                    viewEmployee();
                     menu();
                     break;
                 case 'add a department':
+                    addDepartment();
                     menu();
                     break;
                 case 'add a role':
+                    addRole();
                     menu();
                     break;
                 case 'add an employee':
+                    addEmployee();
                     menu();
                     break;
                 case 'update':
