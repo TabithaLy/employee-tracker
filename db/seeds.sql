@@ -1,4 +1,6 @@
 -- syntax from this modules miniproject
+USE company_db;
+
 INSERT INTO department (name)
 VALUES ("Naruto"),
        ("HunterXHunter"),

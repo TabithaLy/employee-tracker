@@ -18,6 +18,12 @@ CREATE TABLE role (
     REFERENCES department(id)
     ON DELETE SET NULL
 );
+
+-- Shout out to Freddy Kwak who is in my study group and help me understand this.
+CREATE TABLE manager (
+  id INT NOT NULL AUTO_INCREMENT PRIMARY KEY
+)
+
 -- Shout out to Voravich who is in my study group and whose repo 
 -- helped me understand this
 CREATE TABLE employee (
@@ -27,10 +33,11 @@ CREATE TABLE employee (
   role_id INT,
   FOREIGN KEY (role_id)
   REFERENCES role(id)
-  -- manager_id INT,
-  -- FOREIGN KEY (manager_id)
---   REFERENCES employee(id)
-  -- ON DELETE SET NULL
+  ON DELETE SET NULL
+  manager_id INT,
+  FOREIGN KEY (manager_id)
+  REFERENCES manager(id)
+  ON DELETE SET NULL
 );
 
 DESCRIBE department;

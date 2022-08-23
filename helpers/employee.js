@@ -5,9 +5,7 @@ const mysql = require('mysql2');
 const db = mysql.createConnection(
     {
       host: 'localhost',
-      // MySQL username,
       user: 'root',
-      // MySQL password
       password: 'Iamgroot',
       database: 'company_db'
     },
@@ -31,7 +29,14 @@ function addEmployee () {
             name: 'last_name',
             message: 'Last Name:',
         }
-    );
+    ).then((data) => {
+        db.query(`INSERT INTO employee (name) VALUES ("");`, data.addEmployee, function (err) {
+            if (err) {
+                console.error(err);
+            }
+            console.log('Success');
+        });
+    });
 }
 
 module.exports = {

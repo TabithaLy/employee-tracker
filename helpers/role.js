@@ -5,9 +5,7 @@ const mysql = require('mysql2');
 const db = mysql.createConnection(
     {
       host: 'localhost',
-      // MySQL username,
       user: 'root',
-      // MySQL password
       password: 'Iamgroot',
       database: 'company_db'
     },
@@ -30,7 +28,14 @@ function addRole () {
             name: 'salary',
             message: 'Salary:',
         }
-    );
+    ).then((data) => {
+        db.query(`INSERT INTO role (name) VALUES ("");`, data.addRole, function (err) {
+            if (err) {
+                console.error(err);
+            }
+            console.log('Success');
+        });
+    });
 }
 
 module.exports = {

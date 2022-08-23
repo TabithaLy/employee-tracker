@@ -5,9 +5,7 @@ const mysql = require('mysql2');
 const db = mysql.createConnection(
     {
       host: 'localhost',
-      // MySQL username,
       user: 'root',
-      // MySQL password
       password: 'Iamgroot',
       database: 'company_db'
     },
@@ -17,6 +15,8 @@ viewDepartment = () => {
 
 }
 
+// Shout out to Freddy Kwak who is in my study group and helped me understand this
+// particularly the syntax on line 29
 function addDepartment () {
     return inquirer
     .prompt(
@@ -25,8 +25,15 @@ function addDepartment () {
             name: 'name',
             message: 'Departement Name:',
         }, 
-    ); 
-}
+    ).then((data) => {
+        db.query(`INSERT INTO department (name) VALUES ("");`, data.addDepartment, function (err) {
+            if (err) {
+                console.error(err);
+            }
+            console.log('Success');
+        });
+    }); 
+};
 
 module.exports = {
     viewDepartment,
