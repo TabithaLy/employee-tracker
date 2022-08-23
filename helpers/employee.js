@@ -18,8 +18,9 @@ viewEmployee = () => {
 
 }
 
-addEmployee = () => {
-    inquirer.prompt(
+function addEmployee () {
+    return inquirer
+        .prompt(
         {
             type: 'input',
             name: 'first_name',

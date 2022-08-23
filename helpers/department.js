@@ -17,14 +17,15 @@ viewDepartment = () => {
 
 }
 
-addDepartment = () => {
-    inquirer.prompt(
+function addDepartment () {
+    return inquirer
+    .prompt(
         {
             type: 'input',
             name: 'name',
             message: 'Departement Name:',
-        }
-    );
+        }, 
+    ); 
 }
 
 module.exports = {

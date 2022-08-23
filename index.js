@@ -1,8 +1,10 @@
 const inquirer = require('inquirer');
+const { viewDepartment, addDepartment } = require('./helpers/department');
+const { viewRole, addRole } = require('./helpers/role');
+const { viewEmployee, addEmployee } = require('./helpers/employee');
 
 // Menu prompt - copied syntax from my own previous challenge team profile 
 // generator: https://github.com/TabithaLy/team-profile-generator/index.js
-
 function menu () {
     return inquirer
         .prompt(
@@ -22,27 +24,27 @@ function menu () {
         .then(response => {
             switch (response.menu) {
                 case 'view all departments':
-                    viewDepartment();
+                    // viewDepartment();
                     menu();
                     break;
                 case 'view all roles':
-                    viewRole();
+                    // viewRole();
                     menu();
                     break;
                 case 'view all employees':
-                    viewEmployee();
+                    // viewEmployee();
                     menu();
                     break;
                 case 'add a department':
-                    addDepartment();
+                    // addDepartment();
                     menu();
                     break;
                 case 'add a role':
-                    addRole();
+                    // addRole();
                     menu();
                     break;
                 case 'add an employee':
-                    addEmployee();
+                    // addEmployee();
                     menu();
                     break;
                 case 'update':

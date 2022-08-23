@@ -17,8 +17,9 @@ viewRole = () => {
 
 }
 
-addRole = () => {
-    inquirer.prompt(
+function addRole () {
+    return inquirer
+    .prompt(
         {
             type: 'input',
             name: 'title',
