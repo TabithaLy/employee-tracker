@@ -8,6 +8,10 @@ The purpose of this challenge is to build a command line application from scratc
 
 [Description](#description)
 
+[Link](#link)
+
+[Shout-outs](#shout-outs)
+
 [Installation](#installation)
 
 [Usage](#usage)
@@ -15,6 +19,15 @@ The purpose of this challenge is to build a command line application from scratc
 [License](#license)
 
 [Questions](#questions)
+
+## Link
+
+[https://drive.google.com/file/d/1hyn61dOEODyqDehhVCnY_ZZOcKjKiQQS/view](https://drive.google.com/file/d/1hyn61dOEODyqDehhVCnY_ZZOcKjKiQQS/view)
+
+## Shout-Outs
+
+Credit to my study group and classmates during office hours who helped me with a variety of concepts.
+Major thanks to Leif H. and Ben W. for their help troubleshooting blockers.  
 
 ## Installation
 
