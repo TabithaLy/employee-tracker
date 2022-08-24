@@ -169,7 +169,8 @@ function addEmployee() {
         if (err) {
             console.error(err);
         } else {
-            console.log(results);
+            console.log("got here",results);
+            const newResults = results.map(role => role.title)
             return inquirer
                 .prompt([
                     {
@@ -186,15 +187,20 @@ function addEmployee() {
                         type: 'list',
                         name: 'role',
                         message: 'Role:',
-                        choices: results
+                        choices: newResults,
+                    },
+                    {
+                        type: 'input',
+                        name: 'manager',
+                        message: "What is your manager's id?",
                     }
                 ]).then((data) => {
-                    db.query(`SELECT id FROM role WHERE name = ?`, data.role, (err, results) => {
+                    db.query(`SELECT id FROM role WHERE title = ?`, data.role, (err, results) => {
                         if (err) {
                             console.error(err);
                         } else {
                             console.log(results)
-                            db.query(`INSERT INTO employee (first_name, last_name, role_id) VALUES (?, ?, ?);`, [data.first_name, data.last_name, results[0].id], function (err) {
+                            db.query(`INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUES (?, ?, ?, ?);`, [data.first_name, data.last_name, results[0].id, data.manager], function (err) {
                                 if (err) {
                                     console.error(err);
                                 } else
